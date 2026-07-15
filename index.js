@@ -37,6 +37,17 @@ app.listen(port, () => {
 
 //post
 
+app.post('/api/biodata', async (req, res) => {
+    const { nama, nim, kelas } = req.body;
+
+    // Validasi input awal
+    if (!nama || !nim || !kelas) {
+        return res.status(400).json({
+            status: 'gagal',
+            pesan: 'Nama, NIM, dan kelas wajib diisi'
+        });
+    }
+
 //put
 
 //delete
